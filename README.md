@@ -38,21 +38,28 @@ Capability is a collection of projects
 Capability is composable entity
 That way, hr-capability can be a composition of performance-management and stuffing capabilities
 Capabilities are versioned
+One version of Capability maps to one specific version of project(s) and / or capability (-ies)
+Capability revisions composes of droplets for all associated projects (of self and enclosing capability)
 
 ### product
 
 Product is a collection of capabilities
 Being part of product, capabilities can assert dependencies over one or more capabilities
+At a given moment in time, a Release Candidate (RC) of the product is being subjected to promotion
+
+### portfolio
+
+Portfolio is a collection of products
 
 ### deployment pipeline
 
 Deployment Pipeline promotes revisions RUs from one environment to the other
 A pipeline performs pre and post promotion activity and produces metadata that works as qualifiers for the Release Unit Revision (RUR)
 
-
 ### target environment
 
-Target environment is a destination where
+Target environment is a destination where droplets are deployed if yet unavailable
+Droplets can express configuration requirement, by using environment specific namaspace example, [dev].propertyA.value etc.
 
 
 
