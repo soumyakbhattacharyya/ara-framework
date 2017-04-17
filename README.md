@@ -3,10 +3,7 @@ prototype implementation for an extensible application release automation framew
 
 ## why
 
-* We believe "deployment pipeline as code" is the new future for release management.
-* However traditionally release management software have shined brilliantly for a specific technology / functional domain.
-* Best of the both world can be attained if we arrive at an extensible application release automation framework which helps in authoring domain specific language easily.
-* This is an attempt for attaining the nirvana.
+* Because we think traditional release management process will be rocket powered by embracing the concept of "deployment as code"
 
 ## concepts
 
