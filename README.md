@@ -7,9 +7,12 @@ prototype implementation for an extensible application release automation framew
 
 ## concepts
 
-### configuration
+### inventory
 
-Configuration is anything that yeilds information about one commit or a range of commits.
+Inventory hosts detail about a commit.
+Commit results into production of binary(-ies) which is(-are) promoted up the pipeline.
+Therefore it is possible to report quality of binary considering latest commits which has resulted it.
+Understandably this (report) is derived with respect to recent release milestone for the product.
 
 Primarily
 * Version Control System - provides information about the commit (s)
