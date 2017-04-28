@@ -11,15 +11,16 @@ prototype implementation for an extensible application release automation framew
 
 Inventory hosts detail about a commit.
 Commit results into production of binary(-ies) which is(-are) promoted up the pipeline.
-Therefore it is possible to report quality of binary considering latest commits which has resulted it.
-Understandably this (report) is derived with respect to recent release milestone for the product.
+Therefore it is possible to publish quality of binary collating attributes about commit(s) that resulted it.
+A differential view can be derived by comparing present quality w.r.t same derived at recent historical milestone.
 
-This information includes but not limited to 
+Quality information includes (but are not limited to) 
 * detail of change sets 
 * number of test cases executed
 * coverage report
 * static analysis outcome 
 * ... any other information that can be contributed by commit quality contributor resource
+
 
 Primarily
 * Version Control System - provides information about the commit (s)
