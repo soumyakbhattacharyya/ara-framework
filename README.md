@@ -1,9 +1,9 @@
-# ara-framework
+# release-manager
 prototype implementation for an extensible application release automation framework
 
 ## why
 
-* Because we think traditional release management process will be rocket powered by embracing the concept of "deployment as code"
+* to implement mvp that helps you perform release management for you artifact
 
 ## concepts
 
