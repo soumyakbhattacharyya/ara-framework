@@ -9,9 +9,9 @@ prototype implementation for an extensible application release automation framew
 
 ### inventory
 
-Inventory hosts detail about a commit.
+Inventory hosts details about a commit.
 Commit results into production of binary(-ies) which is(-are) promoted up the pipeline.
-Therefore it is possible to publish quality of binary collating attributes about commit(s) that resulted it.
+Therefore it is possible to derive quality of binary by summing attributes about commit(s) that resulted it.
 A differential view can be derived by comparing present quality w.r.t same derived at recent historical milestone.
 
 Quality information includes (but are not limited to) 
@@ -24,7 +24,7 @@ Quality information includes (but are not limited to)
 
 Primarily
 * Version Control System - provides information about the commit (s)
-* Continuous Integration Server - provides various information about build(s)
+* Continuous Integration Server - provides various information about build(s), test execution detail, coverage etc.
 * Binary Repository - provides various information about the binary being produced
 
 ### project
