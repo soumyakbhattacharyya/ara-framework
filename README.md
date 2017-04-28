@@ -14,6 +14,13 @@ Commit results into production of binary(-ies) which is(-are) promoted up the pi
 Therefore it is possible to report quality of binary considering latest commits which has resulted it.
 Understandably this (report) is derived with respect to recent release milestone for the product.
 
+This information includes but not limited to 
+* detail of change sets 
+* number of test cases executed
+* coverage report
+* static analysis outcome 
+* ... any other information that can be contributed by commit quality contributor resource
+
 Primarily
 * Version Control System - provides information about the commit (s)
 * Continuous Integration Server - provides various information about build(s)
