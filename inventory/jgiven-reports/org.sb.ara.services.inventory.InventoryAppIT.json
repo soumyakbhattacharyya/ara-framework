@@ -1,0 +1,333 @@
+{
+  "className": "org.sb.ara.services.inventory.InventoryAppIT",
+  "name": "Inventory App IT",
+  "scenarios": [
+    {
+      "className": "org.sb.ara.services.inventory.InventoryAppIT",
+      "testMethodName": "the_root_path_returns_greetings_from_JGiven",
+      "description": "the root path returns greetings from JGiven",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "get",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "get"
+                },
+                {
+                  "value": "/",
+                  "argumentInfo": {
+                    "argumentName": "path",
+                    "formattedValue": "\"/\""
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 111936637
+            },
+            {
+              "name": "the status is",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "the status is"
+                },
+                {
+                  "value": "200",
+                  "argumentInfo": {
+                    "argumentName": "status",
+                    "formattedValue": "200"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 129085
+            },
+            {
+              "name": "the content is",
+              "words": [
+                {
+                  "value": "and",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "the content is"
+                },
+                {
+                  "value": "TODO_IMPLEMENTATION",
+                  "argumentInfo": {
+                    "argumentName": "content",
+                    "formattedValue": "\"TODO_IMPLEMENTATION\""
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 5968338
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 435828424
+        }
+      ],
+      "durationInNanos": 435828424,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "org.sb.ara.services.inventory.InventoryAppIT",
+      "testMethodName": "ensure_reachability",
+      "description": "ensure reachability",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 108559
+        }
+      ],
+      "durationInNanos": 108559,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "org.sb.ara.services.inventory.InventoryAppIT",
+      "testMethodName": "register_configuration_info",
+      "description": "register configuration info",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "post",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "post"
+                },
+                {
+                  "value": "/configurations",
+                  "argumentInfo": {
+                    "argumentName": "path",
+                    "formattedValue": "\"/configurations\""
+                  }
+                }
+              ],
+              "status": "FAILED",
+              "durationInNanos": 9960915
+            },
+            {
+              "name": "the status is",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "the status is"
+                },
+                {
+                  "value": "201",
+                  "argumentInfo": {
+                    "argumentName": "status",
+                    "formattedValue": "201"
+                  }
+                }
+              ],
+              "status": "SKIPPED",
+              "durationInNanos": 0
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "FAILED",
+          "success": false,
+          "errorMessage": "java.lang.AssertionError: Status expected:\u003c200\u003e but was:\u003c404\u003e",
+          "stackTrace": [
+            "org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:54)",
+            "org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:81)",
+            "org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:664)",
+            "org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:171)",
+            "org.sb.ara.services.inventory.InventoryAppStage.post(InventoryAppStage.java:50)",
+            "org.sb.ara.services.inventory.InventoryAppStage$ByteBuddy$8AfjHVlM.post$accessor$ZKH4h24o(Unknown Source)",
+            "org.sb.ara.services.inventory.InventoryAppStage$ByteBuddy$8AfjHVlM$auxiliary$opHmqNIC.call(Unknown Source)",
+            "org.sb.ara.services.inventory.InventoryAppStage$ByteBuddy$8AfjHVlM.post(Unknown Source)",
+            "org.sb.ara.services.inventory.InventoryAppIT.register_configuration_info(InventoryAppIT.java:28)",
+            "org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)",
+            "org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)",
+            "org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)",
+            "org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)",
+            "com.tngtech.jgiven.junit.JGivenMethodRule$1.evaluate(JGivenMethodRule.java:73)",
+            "org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)",
+            "org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)",
+            "org.springframework.test.context.junit4.statements.RunPrepareTestInstanceCallbacks.evaluate(RunPrepareTestInstanceCallbacks.java:64)",
+            "org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)",
+            "org.springframework.test.context.junit4.statements.SpringFailOnTimeout.evaluate(SpringFailOnTimeout.java:87)",
+            "org.springframework.test.context.junit4.statements.ProfileValueChecker.evaluate(ProfileValueChecker.java:101)",
+            "org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)",
+            "org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)",
+            "org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)",
+            "org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)",
+            "org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)",
+            "org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)",
+            "org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)",
+            "org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)",
+            "org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)",
+            "org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)",
+            "org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)",
+            "org.springframework.test.context.junit4.statements.ProfileValueChecker.evaluate(ProfileValueChecker.java:101)",
+            "org.springframework.test.context.junit4.rules.SpringClassRule$TestContextManagerCacheEvictor.evaluate(SpringClassRule.java:242)",
+            "org.junit.rules.RunRules.evaluate(RunRules.java:20)",
+            "org.junit.runners.ParentRunner.run(ParentRunner.java:363)",
+            "org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)",
+            "org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)",
+            "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)",
+            "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)",
+            "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)",
+            "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)"
+          ],
+          "durationInNanos": 51795732
+        }
+      ],
+      "durationInNanos": 51795732
+    },
+    {
+      "className": "org.sb.ara.services.inventory.InventoryAppIT",
+      "testMethodName": "describe_binary",
+      "description": "describe binary",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 79346
+        }
+      ],
+      "durationInNanos": 79346,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "org.sb.ara.services.inventory.InventoryAppIT",
+      "testMethodName": "describe_commit",
+      "description": "describe commit",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 173298
+        }
+      ],
+      "durationInNanos": 173298,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "org.sb.ara.services.inventory.InventoryAppIT",
+      "testMethodName": "describe_build",
+      "description": "describe build",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 117638
+        }
+      ],
+      "durationInNanos": 117638,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "org.sb.ara.services.inventory.InventoryAppIT",
+      "testMethodName": "contextLoads",
+      "description": "Context loads",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 173693
+        }
+      ],
+      "durationInNanos": 173693,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "org.sb.ara.services.inventory.InventoryAppIT",
+      "testMethodName": "grab_change_detail",
+      "description": "grab change detail",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 78557
+        }
+      ],
+      "durationInNanos": 78557,
+      "executionStatus": "SUCCESS"
+    }
+  ],
+  "tagMap": {}
+}
