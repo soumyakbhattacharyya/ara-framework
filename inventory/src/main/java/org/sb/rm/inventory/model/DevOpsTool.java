@@ -8,17 +8,25 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class DevOpsTool implements Reachable {
 
+  @Getter
+  @Setter
   @Id
   private String id;
 
+  @Getter
+  @Setter
   private Credential credential;
+  @Getter
+  @Setter
   private Endpoint endpoint;
   private Type type;
 
