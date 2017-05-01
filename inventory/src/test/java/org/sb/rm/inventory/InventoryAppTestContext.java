@@ -1,4 +1,4 @@
-package org.sb.ara.services.inventory;
+package org.sb.rm.inventory;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

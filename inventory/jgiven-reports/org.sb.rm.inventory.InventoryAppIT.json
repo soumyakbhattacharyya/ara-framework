@@ -1,9 +1,9 @@
 {
-  "className": "org.sb.ara.services.inventory.InventoryAppIT",
+  "className": "org.sb.rm.inventory.InventoryAppIT",
   "name": "Inventory App IT",
   "scenarios": [
     {
-      "className": "org.sb.ara.services.inventory.InventoryAppIT",
+      "className": "org.sb.rm.inventory.InventoryAppIT",
       "testMethodName": "contextLoads",
       "description": "Context loads",
       "tagIds": [],
@@ -18,10 +18,10 @@
           "derivedArguments": [],
           "status": "SUCCESS",
           "success": true,
-          "durationInNanos": 34953841
+          "durationInNanos": 28626661
         }
       ],
-      "durationInNanos": 34953841,
+      "durationInNanos": 28626661,
       "executionStatus": "SUCCESS"
     }
   ],

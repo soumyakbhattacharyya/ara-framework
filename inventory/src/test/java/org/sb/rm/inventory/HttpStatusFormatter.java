@@ -1,4 +1,4 @@
-package org.sb.ara.services.inventory;
+package org.sb.rm.inventory;
 
 import java.lang.annotation.Annotation;
 

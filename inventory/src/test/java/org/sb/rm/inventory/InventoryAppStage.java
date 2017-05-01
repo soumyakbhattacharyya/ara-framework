@@ -1,10 +1,11 @@
-package org.sb.ara.services.inventory;
+package org.sb.rm.inventory;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.sb.rm.inventory.controller.InventoryController;
+import org.sb.rm.inventory.model.ToolChain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -38,16 +39,14 @@ public class InventoryAppStage extends Stage<InventoryAppStage> {
     return this;
   }
 
-  public InventoryAppStage post(@Quoted String path) throws Exception {
-    ObjectMapper om = new ObjectMapper();
-    String json = om.writeValueAsString("");
-    // mvcResult = mvc.perform(MockMvcRequestBuilders.post(path).accept(MediaType.APPLICATION_JSON));
+  public InventoryAppStage post(@Quoted String path, ToolChain chain) throws Exception {
+    byte[] json = TestUtil.convertObjectToJsonBytes(chain);
+    ObjectMapper mapper = new ObjectMapper();
     // @formatter:off
-    mvcResult = mvc.perform(MockMvcRequestBuilders.post("/someControllerUrl")
-                   .contentType(MediaType.APPLICATION_JSON)
-                   .content(json)
-                   .accept(MediaType.APPLICATION_JSON))
-                   .andExpect(status().isOk());
+    mvcResult = mvc.perform(MockMvcRequestBuilders.post(path)
+                   .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                   .content(mapper.writeValueAsString(chain))
+                   .accept(MediaType.APPLICATION_JSON));
     // @formatter:on
     return this;
   }

@@ -6,7 +6,6 @@ public enum VCS implements Type {
 
   @Override
   public boolean connect(String url, int timeOut, boolean isJson, String requestMethod) {
-    // TODO Auto-generated method stub
     return false;
   }
 
