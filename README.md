@@ -1,4 +1,7 @@
 # release-manager
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/be0db41d1f8247d58704068220602b8a)](https://www.codacy.com/app/soumyakbhattacharyya/release-manager?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=soumyakbhattacharyya/release-manager&amp;utm_campaign=Badge_Grade)
+
 prototype implementation for an extensible application release automation framework
 
 ## why
