@@ -1,7 +1,5 @@
 package org.sb.rm.inventory;
 
-import java.util.UUID;
-
 import org.junit.Test;
 import org.sb.rm.inventory.controller.InventoryController;
 import org.sb.rm.inventory.model.BinaryRepo;
@@ -9,7 +7,6 @@ import org.sb.rm.inventory.model.CIServer;
 import org.sb.rm.inventory.model.DevOpsTool;
 import org.sb.rm.inventory.model.DevOpsTool.Credential;
 import org.sb.rm.inventory.model.DevOpsTool.Endpoint;
-import org.sb.rm.inventory.persistence.ToolChainRepository;
 import org.sb.rm.inventory.model.ToolChain;
 import org.sb.rm.inventory.model.VCS;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,29 +29,32 @@ public class InventoryAppIT extends SimpleSpringRuleScenarioTest<InventoryAppSta
   @Test
   public void it_is_possible_to_get_detail_about_tools() throws Exception {
     when().get(InventoryController.SETTINGS + "/" + "SINGLETON");
-    then().the_status_is(HttpStatus.OK).and().the_content_is("implementation pending");
+    then().the_status_is(HttpStatus.FOUND);
   }
 
   @Test
   public void it_is_possible_to_register_tools_required_for_ci() throws Exception {
 
     // @formatter:off
-    ToolChain chain = ToolChain.builder().vcs((DevOpsTool
+    ToolChain chain = ToolChain.builder() .id("SINGLETON")
+                                          .vcs((DevOpsTool
                                                         .builder()
-                                                        .id(UUID.randomUUID().toString())
+                                                        .id("SINGLETON_VCS")
                                                         .credential(Credential.builder().userId("acme").password("bogus").build())
                                                         .endpoint(Endpoint.builder().url("git://nowhere").build())
-                                                        .type(VCS.GIT).build()))
+                                                        .type(VCS.GIT.toString()).build()))
                                          .ci((DevOpsTool
                                                         .builder()
+                                                        .id("SINGLETON_CI_SERVER")                                                        
                                                         .credential(Credential.builder().userId("acme").password("bogus").build())
                                                         .endpoint(Endpoint.builder().url("http://jenkins.nowhere").build())
-                                                        .type(CIServer.JENKINS).build()))
+                                                        .type(CIServer.JENKINS.toString()).build()))
                                          .repo((DevOpsTool
                                                         .builder()
+                                                        .id("SINGLETON_BINARY_REPO")
                                                         .credential(Credential.builder().userId("acme").password("bogus").build())
                                                         .endpoint(Endpoint.builder().url("http://nowhere").build())
-                                                        .type(BinaryRepo.ARTIFACTORY).build()))                                         
+                                                        .type(BinaryRepo.ARTIFACTORY.toString()).build()))                                         
                                          .build();
 
     // @formatter:on
@@ -63,37 +63,10 @@ public class InventoryAppIT extends SimpleSpringRuleScenarioTest<InventoryAppSta
   }
 
   @Test
-  public void ensure_reachability() {
-
+  public void it_is_possible_to_ensure_configured_tools_can_be_connected() throws Exception {
+    when().resources_configured_are_pinged(InventoryController.SETTINGS + "/" + "SINGLETON");
+    then().result_is_success();
   }
 
-  @Test
-  public void describe_build() {
-
-  }
-
-  @Test
-  public void describe_commit() {
-
-  }
-
-  @Test
-  public void describe_binary() {
-
-  }
-
-  @Test
-  public void grab_change_detail() {
-
-  }
-
-  //@formatter:off
-  
-  /**
-   * 1. given a commit id, find detail about it
-   * 2. given a build id, find detail about it
-   * 3. given a binary id, find detail about it
-   */
-  
   //@formatter:on
 }

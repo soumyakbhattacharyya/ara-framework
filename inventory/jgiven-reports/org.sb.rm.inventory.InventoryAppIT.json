@@ -4,8 +4,8 @@
   "scenarios": [
     {
       "className": "org.sb.rm.inventory.InventoryAppIT",
-      "testMethodName": "it_is_possible_to_register_tools_required_for_ci",
-      "description": "it is possible to register tools required for ci",
+      "testMethodName": "it_is_possible_to_get_detail_about_tools",
+      "description": "it is possible to get detail about tools",
       "tagIds": [],
       "explicitParameters": [],
       "derivedParameters": [],
@@ -15,32 +15,25 @@
           "caseNr": 1,
           "steps": [
             {
-              "name": "post",
+              "name": "get",
               "words": [
                 {
                   "value": "When",
                   "isIntroWord": true
                 },
                 {
-                  "value": "post"
+                  "value": "get"
                 },
                 {
-                  "value": "/settings",
+                  "value": "/settings/SINGLETON",
                   "argumentInfo": {
                     "argumentName": "path",
-                    "formattedValue": "\"/settings\""
-                  }
-                },
-                {
-                  "value": "ToolChain(ci\u003dorg.sb.rm.inventory.model.DevOpsTool@70997a94, repo\u003dorg.sb.rm.inventory.model.DevOpsTool@61f377d1, vcs\u003dorg.sb.rm.inventory.model.DevOpsTool@6c538eb2)",
-                  "argumentInfo": {
-                    "argumentName": "chain",
-                    "formattedValue": "ToolChain(ci\u003dorg.sb.rm.inventory.model.DevOpsTool@70997a94, repo\u003dorg.sb.rm.inventory.model.DevOpsTool@61f377d1, vcs\u003dorg.sb.rm.inventory.model.DevOpsTool@6c538eb2)"
+                    "formattedValue": "\"/settings/SINGLETON\""
                   }
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 324926042
+              "durationInNanos": 278496983
             },
             {
               "name": "the status is",
@@ -53,25 +46,25 @@
                   "value": "the status is"
                 },
                 {
-                  "value": "201",
+                  "value": "302",
                   "argumentInfo": {
                     "argumentName": "status",
-                    "formattedValue": "201"
+                    "formattedValue": "302"
                   }
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 5280282
+              "durationInNanos": 5286993
             }
           ],
           "explicitArguments": [],
           "derivedArguments": [],
           "status": "SUCCESS",
           "success": true,
-          "durationInNanos": 422085838
+          "durationInNanos": 350266343
         }
       ],
-      "durationInNanos": 422085838,
+      "durationInNanos": 350266343,
       "executionStatus": "SUCCESS"
     }
   ],

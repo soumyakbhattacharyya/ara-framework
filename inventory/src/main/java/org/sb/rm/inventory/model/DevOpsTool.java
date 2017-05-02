@@ -1,9 +1,9 @@
 package org.sb.rm.inventory.model;
 
+import org.sb.rm.inventory.exception.ResourceUnreachableException;
 import org.springframework.data.annotation.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,10 +25,14 @@ public class DevOpsTool implements Reachable {
   @Getter
   @Setter
   private Credential credential;
+
   @Getter
   @Setter
   private Endpoint endpoint;
-  private Type type;
+
+  @Getter
+  @Setter
+  private String type;
 
   @Data
   @Builder
@@ -51,17 +55,26 @@ public class DevOpsTool implements Reachable {
 
   @Override
   @JsonIgnore
+  /**
+   * Validates if the configured resource is reachable
+   */
   public Boolean isReachable() {
+    
+    String endpoint = getEndpoint().getUrl();    
+    String userId = getCredential().getUserId();
+    String pwd = getCredential().getPassword();
+    String type = getType();
+   
+    switch (key) {
+    case value:
+      
+      break;
+
+    default:
+      break;
+    }
+    
     return true;
-  }
-
-  @JsonDeserialize(using = TypeDeserializer.class)
-  public Type getType() {
-    return type;
-  }
-
-  public void setType(Type type) {
-    this.type = type;
   }
 
 }

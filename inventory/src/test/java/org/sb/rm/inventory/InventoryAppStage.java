@@ -61,4 +61,13 @@ public class InventoryAppStage extends Stage<InventoryAppStage> {
     return this;
   }
 
+  public InventoryAppStage result_is_success() {
+    return this;
+  }
+
+  public InventoryAppStage resources_configured_are_pinged(@Quoted String string) {
+    return this;
+
+  }
+
 }
