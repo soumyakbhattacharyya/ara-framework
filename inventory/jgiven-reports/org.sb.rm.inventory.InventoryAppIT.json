@@ -4,6 +4,78 @@
   "scenarios": [
     {
       "className": "org.sb.rm.inventory.InventoryAppIT",
+      "testMethodName": "it_is_possible_to_register_tools_required_for_ci",
+      "description": "it is possible to register tools required for ci",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "post",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "post"
+                },
+                {
+                  "value": "/settings",
+                  "argumentInfo": {
+                    "argumentName": "path",
+                    "formattedValue": "\"/settings\""
+                  }
+                },
+                {
+                  "value": "ToolChain(id\u003dSINGLETON, ci\u003dorg.sb.rm.inventory.model.DevOpsTool@3811510, repo\u003dorg.sb.rm.inventory.model.DevOpsTool@24eeac69, vcs\u003dorg.sb.rm.inventory.model.DevOpsTool@18539cb1)",
+                  "argumentInfo": {
+                    "argumentName": "chain",
+                    "formattedValue": "ToolChain(id\u003dSINGLETON, ci\u003dorg.sb.rm.inventory.model.DevOpsTool@3811510, repo\u003dorg.sb.rm.inventory.model.DevOpsTool@24eeac69, vcs\u003dorg.sb.rm.inventory.model.DevOpsTool@18539cb1)"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 318326479
+            },
+            {
+              "name": "the status is",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "the status is"
+                },
+                {
+                  "value": "201",
+                  "argumentInfo": {
+                    "argumentName": "status",
+                    "formattedValue": "201"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 4195487
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 395120713
+        }
+      ],
+      "durationInNanos": 395120713,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "org.sb.rm.inventory.InventoryAppIT",
       "testMethodName": "it_is_possible_to_get_detail_about_tools",
       "description": "it is possible to get detail about tools",
       "tagIds": [],
@@ -33,7 +105,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 278496983
+              "durationInNanos": 114668889
             },
             {
               "name": "the status is",
@@ -54,17 +126,97 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 5286993
+              "durationInNanos": 698327
             }
           ],
           "explicitArguments": [],
           "derivedArguments": [],
           "status": "SUCCESS",
           "success": true,
-          "durationInNanos": 350266343
+          "durationInNanos": 143734126
         }
       ],
-      "durationInNanos": 350266343,
+      "durationInNanos": 143734126,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "org.sb.rm.inventory.InventoryAppIT",
+      "testMethodName": "it_is_possible_to_ensure_configured_tools_can_be_connected",
+      "description": "it is possible to ensure configured tools can be connected",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "resources configured are pinged",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "resources configured are pinged"
+                },
+                {
+                  "value": "/settings/SINGLETON/find-resource-rechability",
+                  "argumentInfo": {
+                    "argumentName": "string",
+                    "formattedValue": "\"/settings/SINGLETON/find-resource-rechability\""
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 772147
+            },
+            {
+              "name": "result is success",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "result is success"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 61188
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 35006344
+        }
+      ],
+      "durationInNanos": 35006344,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "org.sb.rm.inventory.InventoryAppIT",
+      "testMethodName": "contextLoads",
+      "description": "Context loads",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 218696
+        }
+      ],
+      "durationInNanos": 218696,
       "executionStatus": "SUCCESS"
     }
   ],

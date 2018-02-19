@@ -1,6 +1,5 @@
 package org.sb.rm.inventory.model;
 
-import org.sb.rm.inventory.exception.ResourceUnreachableException;
 import org.springframework.data.annotation.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -59,21 +58,25 @@ public class DevOpsTool implements Reachable {
    * Validates if the configured resource is reachable
    */
   public Boolean isReachable() {
-    
-    String endpoint = getEndpoint().getUrl();    
+
+    String endpoint = getEndpoint().getUrl();
     String userId = getCredential().getUserId();
     String pwd = getCredential().getPassword();
     String type = getType();
-   
-    switch (key) {
-    case value:
-      
-      break;
 
-    default:
-      break;
+    // validate reachability
+    if (VCS.valueOf(type) == VCS.GIT) {
+      // do something
     }
-    
+
+    if (BinaryRepo.valueOf(type) == BinaryRepo.ARTIFACTORY) {
+      // do something
+    }
+
+    if (CIServer.valueOf(type) == CIServer.JENKINS) {
+      // do something
+    }
+
     return true;
   }
 

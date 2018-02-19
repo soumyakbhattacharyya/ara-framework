@@ -70,33 +70,33 @@ public class InventoryController {
     return new ResponseEntity<String>(sb.toString(), HttpStatus.NO_CONTENT);
   }
 
-  public static void main(String[] args) throws Exception {
-    // @formatter:off
-    ToolChain chain = ToolChain.builder().vcs((DevOpsTool
-                                                        .builder()
-                                                        .credential(Credential.builder().userId("acme").password("bogus").build())
-                                                        .endpoint(Endpoint.builder().url("git://nowhere").build())
-                                                        .type(VCS.GIT.toString()).build()))
-                                         .ci((DevOpsTool
-                                                        .builder()
-                                                        .credential(Credential.builder().userId("acme").password("bogus").build())
-                                                        .endpoint(Endpoint.builder().url("http://jenkins.nowhere").build())
-                                                        .type(CIServer.JENKINS.toString()).build()))
-                                         .repo((DevOpsTool
-                                                        .builder()
-                                                        .credential(Credential.builder().userId("acme").password("bogus").build())
-                                                        .endpoint(Endpoint.builder().url("http://nowhere").build())
-                                                        .type(BinaryRepo.ARTIFACTORY.toString()).build()))                                         
-                                         .build();
-
-    // @formatter:on
-    ObjectMapper mapper = new ObjectMapper();
-    System.out.println(mapper.writeValueAsString(chain));
-    String str = mapper.writeValueAsString(chain);
-
-    ToolChain c = mapper.readValue(str, ToolChain.class);
-    // SpringApplication.run(InventoryController.class, args);
-
-  }
+//  public static void main(String[] args) throws Exception {
+//    // @formatter:off
+//    ToolChain chain = ToolChain.builder().vcs((DevOpsTool
+//                                                        .builder()
+//                                                        .credential(Credential.builder().userId("acme").password("bogus").build())
+//                                                        .endpoint(Endpoint.builder().url("git://nowhere").build())
+//                                                        .type(VCS.GIT.toString()).build()))
+//                                         .ci((DevOpsTool
+//                                                        .builder()
+//                                                        .credential(Credential.builder().userId("acme").password("bogus").build())
+//                                                        .endpoint(Endpoint.builder().url("http://jenkins.nowhere").build())
+//                                                        .type(CIServer.JENKINS.toString()).build()))
+//                                         .repo((DevOpsTool
+//                                                        .builder()
+//                                                        .credential(Credential.builder().userId("acme").password("bogus").build())
+//                                                        .endpoint(Endpoint.builder().url("http://nowhere").build())
+//                                                        .type(BinaryRepo.ARTIFACTORY.toString()).build()))                                         
+//                                         .build();
+//
+//    // @formatter:on
+//    ObjectMapper mapper = new ObjectMapper();
+//    System.out.println(mapper.writeValueAsString(chain));
+//    String str = mapper.writeValueAsString(chain);
+//
+//    ToolChain c = mapper.readValue(str, ToolChain.class);
+//    // SpringApplication.run(InventoryController.class, args);
+//
+//  }
 
 }

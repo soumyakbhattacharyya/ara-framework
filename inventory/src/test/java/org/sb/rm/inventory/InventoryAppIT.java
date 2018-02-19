@@ -64,7 +64,7 @@ public class InventoryAppIT extends SimpleSpringRuleScenarioTest<InventoryAppSta
 
   @Test
   public void it_is_possible_to_ensure_configured_tools_can_be_connected() throws Exception {
-    when().resources_configured_are_pinged(InventoryController.SETTINGS + "/" + "SINGLETON");
+    when().resources_configured_are_pinged(InventoryController.SETTINGS + "/" + "SINGLETON" + "/find-resource-rechability");
     then().result_is_success();
   }
 
